@@ -1,10 +1,11 @@
 import React from "react";
-import classes from "./Auth.module.css";
+import classes from "./Registration.module.css";
 import App from "../App/App";
 import { Link } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-class Auth extends React.Component {
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+class Registration extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,12 +17,16 @@ class Auth extends React.Component {
 
   login() {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, this.state.userName, this.state.password)
+    createUserWithEmailAndPassword(
+      auth,
+      this.state.userName,
+      this.state.password
+    )
       .then((userCredential) => {
         this.setState({ isAuth: true });
       })
       .catch((error) => {
-        alert(error.message);
+        alert(error);
       });
   }
 
@@ -45,7 +50,7 @@ class Auth extends React.Component {
         ) : (
           <div className={classes.authContainer}>
             <div className={classes.authForm}>
-              <h2>Авторизация</h2>
+              <h2>Регистрация</h2>
               <div>
                 <input
                   onChange={(e) => this.setState({ userName: e.target.value })}
@@ -57,14 +62,17 @@ class Auth extends React.Component {
                   type="password"
                 ></input>
               </div>
+
               <div>
                 <button
                   className={classes.button}
                   onClick={this.login.bind(this)}
                 >
-                  <span>Войти</span>
+                  <span>Регистрация</span>
                 </button>
-                <Link to="/">Регистрация </Link>
+                <span>
+                  Уже есть аккаунт ? <Link to="/auth">Авторизоваться</Link>
+                </span>
               </div>
             </div>
           </div>
@@ -74,4 +82,4 @@ class Auth extends React.Component {
   }
 }
 
-export default Auth;
+export default Registration;

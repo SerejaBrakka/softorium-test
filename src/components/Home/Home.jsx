@@ -1,13 +1,10 @@
 import React from "react";
-import Auth from "../Auth/Auth";
+import Registration from "../Registration/Registration";
 class Home extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div>
-        <Auth />
+        <Registration />
       </div>
     );
   }

@@ -4,15 +4,14 @@ class QuestionHistory extends React.Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <>
-        История вопросов:
-        {this.props.questions &&
-          this.props.questions.map((e, i) => (
+        Моя история вопросов:
+        {this.props.userAndHisMessage[this.props.userName] &&
+          this.props.userAndHisMessage[this.props.userName].map((e, i) => (
             <div key={i}>
-              <p>{e}</p>
+              <div>{e}</div>
             </div>
           ))}
       </>

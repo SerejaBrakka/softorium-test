@@ -1,0 +1,60 @@
+/* img */
+.ballDiv {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: url(../../assets/ball.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 50px black;
+}
+.ballDiv:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 50px red;
+}
+/* Answer */
+.answers {
+  text-align: center;
+  font-size: 32px;
+  font-family: fantasy;
+  cursor: pointer;
+}
+/* Input */
+input {
+  margin: 20px 32px 10px 0;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  border: 2px solid black transparent;
+  border-bottom: 2px solid black;
+  padding-left: 20px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+input::placeholder {
+  color: #1b1b1b;
+}
+
+.inputQuestion::placeholder {
+  transition: 0.5s;
+  color: blue;
+}
+.inputQuestion:hover {
+  border: 2px solid blue;
+}
+.inputQuestion:focus {
+  border: 2px solid blue;
+}
+.inputQuestion:focus::placeholder {
+  font-size: 12px;
+  line-height: 20px;
+  transform: translateY(-12px);
+  color: blue;
+}

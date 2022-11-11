@@ -1,65 +1,37 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-/* img */
-.ballDiv {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 1px solid black;
-  background: url(../../assets/ball.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 5px 5px 50px black;
-}
-.ballDiv:hover {
-  cursor: pointer;
-  box-shadow: 5px 5px 50px red;
-}
-/* Answer */
-.answers {
-  text-align: center;
-  font-size: 32px;
-  font-family: fantasy;
-  cursor: pointer;
-}
-/* Input */
-input {
-  margin: 20px 32px 10px 0;
-  height: 50px;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  border: 2px solid black transparent;
-  border-bottom: 2px solid black;
-  padding-left: 20px;
   box-sizing: border-box;
 }
-
-input::placeholder {
-  color: #1b1b1b;
+/* user */
+.cointainer__user {
+  width: 300px;
 }
-.inputQuestion::placeholder {
-  transition: 0.5s;
-  color: blue;
+.ballAndInput__container {
+  display: flex;
+  flex-direction: column;
 }
-.inputQuestion:hover {
-  border: 2px solid blue;
+/* currentQuestions */
+.myCurrentQuestions {
+  width: 200px;
+  margin-left: 50px;
 }
-.inputQuestion:focus {
-  border: 2px solid blue;
+/* historyQuestions */
+.historyQuestions {
+  width: 200px;
+  margin-left: 100px;
 }
-.inputQuestion:focus::placeholder {
-  font-size: 12px;
-  line-height: 20px;
-  transform: translateY(-12px);
-  color: blue;
+/* countQuestions */
+.countQuestions {
+  width: 200px;
+  margin-bottom: 50px;
+}
+/* historyOfAllUsers */
+.historyOfAllUsers {
+  margin-left: 50px;
+  width: 200px;
+}
+.allQuestions {
+  display: flex;
 }
 
 p {
@@ -112,9 +84,13 @@ p {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  height: 50px;
 }
 
 @media (max-width: 768px) {
+  .allQuestions {
+    flex-direction: column;
+  }
   .container {
     flex-direction: column;
   }
